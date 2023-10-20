@@ -1,0 +1,78 @@
+server:
+  port: 9000
+  ajpPort: 9010
+  
+spring:
+  hateoas:
+    use-hal-as-default-json-media-type: false
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  datasource: 
+    initialize: false
+    url: jdbc:mysql://qa-db.cstoreonline.com:3306/easykoins_unit_test?serverTimezone=UTC&useSSL=false    
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ENC(olbIzRpNuN6Z4fF0ZEwICw==)
+    password: ENC(GgBmJKlmp9tiDey7FKy2Tw==)
+    type: com.zaxxer.hikari.HikariDataSource     
+    hikari:
+      idle-timeout: 10000
+      connection-timeout: 60000
+      connection-test-query: SELECT 1
+      #minimum-idle: 3
+      maximum-pool-size: 10
+      pool-name: vmt-rest-api-datasource
+      
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      #ddl-auto: validate
+      naming:
+          implicit-strategy: com.ezcoins.rest.hibernate.ImplicitNamingStrategyComponentPathImpl
+          physical-strategy: com.ezcoins.rest.hibernate.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.format_sql: true
+      
+  mail:
+    host: smtp.coinxoom.com
+    port: 587
+    username: noreply@coinxoom.com
+    password: ENC(cORyIChPhrWfzHHABfysMwaHqv9n9mKp)
+    properties: 
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true 
+
+ 
+flyway:
+  enabled: true 
+  clean: true
+  
+jasypt:
+  encryptor:
+    password: Test123!
+      
+ezcoins:
+   auth-token:
+    secret: test-secret
+    # 864_000_000 = 10 days
+    expiration-in-milliseconds: 864_000_000
+ 
+security:
+  user:
+    name: admin
+    password: admin   
+  
+logging:
+  level:
+    org.springframework: INFO
+    com.mkyong: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  
+  

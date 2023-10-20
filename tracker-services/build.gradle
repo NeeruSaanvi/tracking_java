@@ -1,0 +1,41 @@
+  plugins {
+	 
+	id 'java'
+	//id 'jar'
+}
+
+//apply plugin: 'io.spring.dependency-management'
+
+group = 'com.tracker'
+version = '0.0.1-SNAPSHOT' 
+sourceCompatibility = '1.8'
+
+defaultTasks 'clean', 'install'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	//mavenLocal()
+	mavenCentral()
+}
+
+def lombok = "1.18.8"
+
+dependencies {      
+	//compile("com.tracker:tracker-commons:${version}")
+	compile project(":tracker-commons") 
+    
+    annotationProcessor("org.projectlombok:lombok:${lombok}")
+    compileOnly("org.projectlombok:lombok:${lombok}")
+    
+}  
+
+

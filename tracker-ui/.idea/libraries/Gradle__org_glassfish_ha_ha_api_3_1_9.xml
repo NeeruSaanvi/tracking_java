@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.ha:ha-api:3.1.9">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.ha/ha-api/3.1.9/c68b600634d4d4bae3fc54575ae850e734dc1af5/ha-api-3.1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.ha/ha-api/3.1.9/c65a4186692f512de4e4d484ab30a35141376d79/ha-api-3.1.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

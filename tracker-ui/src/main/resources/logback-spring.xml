@@ -1,0 +1,59 @@
+<configuration>
+   <!--  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>  -->
+    <property name="LOG_FILE" value="/tmp/tracker_ui/logs/application.log"/>
+    
+    <appender name="CONSOLE_APP" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+	        <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ROLLING-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <file>${LOG_FILE}</file> 
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+    
+    <springProfile name="default">
+        <root level="ERROR">
+            <appender-ref ref="CONSOLE_APP"/>
+        </root> 
+        <logger name="org.springframework" level="INFO" additivity="false">
+        	<appender-ref ref="CONSOLE_APP"/>
+        </logger>
+        <logger name="com.tracker" level="DEBUG" additivity="false">
+        	<appender-ref ref="ROLLING-FILE"/>
+        </logger> 
+    </springProfile>
+    
+    <springProfile name="production">
+        <root level="ERROR">
+        	<appender-ref ref="ROLLING-FILE"/>
+        </root>
+        <logger name="org.springframework" level="INFO" additivity="false">
+        	<appender-ref ref="ROLLING-FILE"/>
+        </logger>
+        <logger name="com.tracker" level="DEBUG" additivity="false">
+        	<appender-ref ref="ROLLING-FILE"/>
+        </logger> 
+    </springProfile>
+    
+    <springProfile name="sportsman">
+        <root level="ERROR">
+        	<appender-ref ref="ROLLING-FILE"/>
+        </root>
+        <logger name="org.springframework" level="INFO" additivity="false">
+        	<appender-ref ref="ROLLING-FILE"/>
+        </logger>
+        <logger name="com.tracker" level="DEBUG" additivity="false">
+        	<appender-ref ref="ROLLING-FILE"/>
+        </logger> 
+    </springProfile>
+ 
+</configuration>

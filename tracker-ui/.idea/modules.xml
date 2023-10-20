@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1123332818/tracker-commons.iml" filepath="$PROJECT_DIR$/.idea/modules/1123332818/tracker-commons.iml" group="tracker-ui/tracker-commons" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1850061132/tracker-services.iml" filepath="$PROJECT_DIR$/.idea/modules/-1850061132/tracker-services.iml" group="tracker-ui/tracker-services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tracker-ui.iml" filepath="$PROJECT_DIR$/.idea/modules/tracker-ui.iml" group="tracker-ui" />
+    </modules>
+  </component>
+</project>

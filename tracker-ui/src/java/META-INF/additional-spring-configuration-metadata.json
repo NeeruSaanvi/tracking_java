@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "schedules.email-notification-service.fixed-delay",
+    "type": "java.lang.Integer",
+    "description": "A description for 'schedules'"
+  },
+  {
+    "name": "schedules.email-notification-service.initial-delay",
+    "type": "java.lang.Integer",
+    "description": "A description for 'schedules'"
+  }, 
+  {
+    "name": "schedules.poolsize",
+    "type": "java.lang.String",
+    "description": "A description for 'schedules.poolsize'"
+  },  
+  {
+    "name": "server.ajp-port",
+    "type": "java.lang.Integer",
+    "description": "AJP Port"
+  },
+  {
+    "name": "server.ajp-enabled",
+    "type": "java.lang.Boolean",
+    "description": "AJP Enabled/Disabled"
+  }
+]}

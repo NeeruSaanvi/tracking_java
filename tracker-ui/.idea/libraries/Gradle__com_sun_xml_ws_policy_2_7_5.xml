@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.sun.xml.ws:policy:2.7.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.ws/policy/2.7.5/5e3ec7b4a9d6b3ae800e382de16e4663fab67f41/policy-2.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.ws/policy/2.7.5/3b781e4dc39eff0fe4517cac6a7f30525c0bcd73/policy-2.7.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

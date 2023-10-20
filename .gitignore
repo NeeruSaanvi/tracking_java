@@ -1,0 +1,8 @@
+**/target/
+**/.nb-gradle/
+**/bin/ 
+**/build/
+**/.gradle/ 
+**/out/*
+**/applogs/*
+/.metadata/

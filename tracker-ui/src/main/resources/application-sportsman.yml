@@ -1,0 +1,99 @@
+server:
+  host: admin.ambassadortrack.net
+
+  port: 80
+  use-forward-headers: true
+  tomcat:
+  #  protocol-header: X-Forwarded-Proto
+  #  remote_ip_header: x-forwarded-for
+    internal-proxies: .*
+  ajpPort: 6073
+  ajpEnabled: false
+  servlet:
+    contextPath: /
+  
+spring: 
+  social.facebook.appId: 410761562312101
+  social.facebook.appSecret: af3b1e569a37c23308940a3733c094a5
+  servlet:
+      max-file-size: 15MB
+      max-request-size: 15MB   
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+  datasource: 
+    initializationMode: NEVER
+    url: jdbc:mysql://database-2.cktpbmygzezj.us-east-2.rds.amazonaws.com:3306/anglertr_sportsm2_db2?serverTimezone=UTC&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: p!Qaz#Edc123#
+    #url: jdbc:mysql://104.198.216.47:3306/graham?serverTimezone=UTC&useSSL=false&zeroDateTimeBehavior=convertToNull   
+    #username: root
+    #password: V8b4n00n
+    #url: jdbc:mysql://66.198.246.132:3306/anglertr_sportsm2_db2?serverTimezone=UTC&useSSL=false&zeroDateTimeBehavior=convertToNull
+    #username: anglertr_sportsm2_user2
+    #password: _wG!%Sw2sq+A
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource     
+    hikari:
+      idle-timeout: 90000
+      connection-timeout: 600000
+      connection-test-query: SELECT 1
+      #minimum-idle: 3
+      maximum-pool-size: 20
+      pool-name: tracker-ui-service-datasource
+      
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      #ddl-auto: validate
+      naming:
+          implicit-strategy: com.tracker.ui.hibernate.ImplicitNamingStrategyComponentPathImpl
+          physical-strategy: com.tracker.ui.hibernate.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.format_sql: true 
+
+
+jasypt:
+  encryptor:
+    password: Test123! 
+    
+schedules:
+  poolsize: 10 #Poolsize for Schedules (Email, Exchange Sync, MarketPrice etc)
+  emailNotificationService:
+    fixedDelay: 10000 
+    initialDelay: 1000 
+
+
+
+google:
+  credentials:
+
+    file: /apps/tracker_ui/new-war/google/credential.json
+    token: AIzaSyA14NLvoFC6BfvGNDUqKVbciyOE_vVs8gw
+    
+sms:
+  url: https://app3.simpletexting.com/v1
+  token: 7f26684f6d1607e5fae9f630761f5cbd
+  
+stevesie:
+  token: e3a412fa-4c3b-4a6a-8348-321986eb6081
+  url: https://stevesie.com/cloud/api/v1
+  workflowUserProfileId: 43a6e053-25b7-49e6-b857-9c29c3a48dfe
+  workflowUserPostId: e31c9f65-aa2a-4e3b-97d8-be401021df2b
+  instaSessionId: 46188064453%3Ad6FKQLBHuKGhF9%3A17,38314684890%3AXOpZf0ah3ouXEq%3A29,38554798630%3AAnbMoI5svlLnqz%3A19,38779666499%3Ajt3D2ApCVuRvaX%3A16,39498450176%3AdD0z6XFsfadbK3%3A17  
+
+
+tiny:
+  url: http://tinyurl.com/api-create.php?url=
+
+sendgrid:
+  apikey: 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
+  
+default:
+  phone: 4045782670
+  email: support@ambassadortrack.net
+  ccEmail: no-reply@ambassadortrack.net
+  fromEmail: no-reply@ambassadortrack.net
+ 

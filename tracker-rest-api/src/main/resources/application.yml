@@ -1,0 +1,81 @@
+server:
+  port: 7072
+  ajpPort: 6072
+  
+spring:
+  hateoas:
+    use-hal-as-default-json-media-type: false
+  profiles:
+    active: development    
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+   
+  
+  datasource: 
+    url: jdbc:mysql://qa-db.cstoreonline.com:3306/graham?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource     
+    hikari:
+      idle-timeout: 10000
+      connection-timeout: 60000
+      connection-test-query: SELECT 1
+      #minimum-idle: 3
+      maximum-pool-size: 10
+      pool-name: tracker-api-datasource
+      
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      #ddl-auto: validate
+      use-new-id-generator-mappings: false
+      naming:
+          implicit-strategy: com.tracker.rest.hibernate.ImplicitNamingStrategyComponentPathImpl
+          physical-strategy: com.tracker.rest.hibernate.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.format_sql: true 
+      
+  mail:
+    host: smtp.studentconsole.com
+    port: 587
+    username: noreply@coinxoom.com
+    password: ENC(cORyIChPhrWfzHHABfysMwaHqv9n9mKp)
+    properties: 
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          from: noreply@studentconsole.com
+  
+  flyway:
+    enabled: false
+    clean: false 
+
+jasypt:
+  encryptor:
+    password: Test123!
+    key-obtention-iterations: 1000
+    pool-size: 10
+    algorithm: PBEWithMD5AndDES
+
+auth-token:
+  secret: test-secret
+  # 31536000000 = 1 year, 900000 = 15 mins
+  expiration-in-milliseconds: 900000
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+    hibernate: INFO
+    com:
+      tracker: DEBUG  
+  
+ 
+  

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.commons:commons-rng-simple:1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-rng-simple/1.0/37d320af97899a6f53d25391c8c1877ca1ba0936/commons-rng-simple-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-rng-simple/1.0/b69ac864bd969bda87209385af4703ff553e3de6/commons-rng-simple-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

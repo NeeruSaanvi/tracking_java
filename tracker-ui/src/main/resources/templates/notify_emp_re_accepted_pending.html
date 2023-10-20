@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>@@SITENAME@@</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+a {
+	color: #2c5d97;
+}
+
+p {
+	line-height: 1.3;
+	margin: 10px 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.innerdiv {
+	text-align: left;
+	margin: auto;
+	width: 50%;
+	padding-left: 35px;
+}
+
+.logoStyle {
+	margin: 20px auto 10px auto;
+	padding: 20px;
+	width: 100%;
+	max-width: 500px;
+	display: block;
+	text-align: center;
+}
+
+.emailLink {
+	text-decoration: none;
+	padding: 7px 20px;
+	display: inline-block;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+
+.bodyDiv {
+	text-align: center;
+	font-family: Helvetica, sans-serif;
+	background: #ffffff;
+	padding: 20px;
+	margin: 0;
+	display: block;
+}
+
+body, html {
+	background: #f7f7f7;
+	text-align: center;
+	width: 100%;
+}
+</style>
+</head>
+
+<body>
+	<div class='bodyDiv'>
+		<div>
+			@@EMP_LOGO_URL@@
+		</div>
+		<hr />
+		<div class='innerdiv'>
+			<p>Hey @@FIRSTLASTNAMEPRO@@,</p>
+			<br />
+			<p>
+			
+				Congratulations on being added to the @@SPONSORNAME@@ team! Looks like you already
+				have an AnglerTrack account through another sponsor, so as long as your account
+				is set up there is nothing more for you to do. Below you will find your discount
+				information for @@SPONSORNAME@@ and other information you need for being on the team.
+				
+				<p class='@@DISCOUNTCODE_STYLE@@'>
+ 						@@DISCOUNTCODE@@
+ 				</p>
+		</div>
+		
+		<div class='@@ATTACHMENT_CLASS@@'>
+			<p>See the attachments provided by @@SPONSORNAME@@ for more details.</p>
+			<a href='@@ATTACHMENT1_URL@@' class="@@ATTACHMENT1_CLASS@@">Attachment</a><br /> 
+			<a href='@@ATTACHMENT2_URL@@' class="@@ATTACHMENT2_CLASS@@">Attachment </a><br /> 
+			<a href='@@ATTACHMENT3_URL@@' class="@@ATTACHMENT3_CLASS@@">Attachment </a>
+		</div>
+
+		<p style='text-align: center; font-size: 11px; padding-top: 20px;'>
+			Let us know if you need any assistance! Email our support desk!</p>
+		<center>
+				@@SUPPORT_EMAIL@@
+		</center>
+		<hr />
+
+		<div class='logoStyle'>
+			@@SITELOGO_URL@@
+		</div>
+
+	</div>
+
+</body>
+</html>

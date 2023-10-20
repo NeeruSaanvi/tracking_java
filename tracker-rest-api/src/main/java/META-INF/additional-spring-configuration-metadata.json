@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "jasypt.encryptor.key-obtention-iterations",
+    "type": "java.lang.Integer",
+    "description": "A description for 'jasypt.encryptor.key-obtention-iterations'"
+  },
+  {
+    "name": "jasypt.encryptor.pool-size",
+    "type": "java.lang.Integer",
+    "description": "A description for 'jasypt.encryptor.pool-size'"
+  },
+  {
+    "name": "spring.flyway.clean",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'spring.flyway.clean'"
+  },
+  {
+    "name": "server.ajpPort",
+    "type": "java.lang.Integer",
+    "description": "A description for 'server.ajpPort'"
+  },
+  {
+    "name": "auth-token.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'auth-token'"
+  },
+  {
+    "name": "auth-token.expiration-in-milliseconds",
+    "type": "java.lang.Long",
+    "description": "A description for 'auth-token'"
+  }
+]}

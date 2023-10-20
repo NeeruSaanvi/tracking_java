@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jasypt:jasypt-hibernate4:1.9.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jasypt/jasypt-hibernate4/1.9.2/e4da82eeca7ae42036d1a186151f8b6828e2d853/jasypt-hibernate4-1.9.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jasypt/jasypt-hibernate4/1.9.2/9ed3c291c2d33332251ef6545001da21f5df45a8/jasypt-hibernate4-1.9.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

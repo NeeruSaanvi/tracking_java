@@ -1,0 +1,147 @@
+server:
+  host: localhost
+  port: 8080
+  ajpPort: 6073
+  ajpEnabled: false
+  use-forward-headers: true
+  tomcat:
+    #protocol-header: X-Forwarded-Proto
+    #remote_ip_header: x-forwarded-for
+    internal-proxies: .*
+  servlet:
+    contextPath: /
+#spring.social.facebook.appId=410761562312101
+#spring.social.facebook.appSecret=PUT_YOUR_FACEBOOK_SECRET_CODE
+#facebook:
+#spring.social.facebook.appId: 410761562312101
+ #spring.social.facebook.appSecret: af3b1e569a37c23308940a3733c094a5
+spring: 
+  #thymeleaf:
+   # prefix: classpath:/templates/
+    #suffix: .html
+  social.facebook.appId: 410761562312101
+  social.facebook.appSecret: af3b1e569a37c23308940a3733c094a5
+ # social.facebook.appId: 345056937206187
+ # social.facebook.appSecret: 593a873a2617b0c13ca81737c9d304a1
+ # profiles.active: sportsman
+
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 15MB  
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+
+  base: 
+    path: localhost:8080
+
+  datasource: 
+    initializationMode: NEVER
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #  url: jdbc:mysql://66.198.246.132:3306/anglertr_dbempmanagement?serverTimezone=UTC&useSSL=false&zeroDateTimeBehavior=convertToNull
+   # username: anglertr_dbuser
+   # password: ^u*Z@to)lm%S
+#    url: jdbc:mysql://66.198.246.132:3306/anglertr_sportsm2_db2?serverTimezone=UTC&useSSL=false&zeroDateTimeBehavior=convertToNull
+#    username: anglertr_sportsm2_user2
+#    password: _wG!%Sw2sq+A
+    url: jdbc:mysql://database-2.cktpbmygzezj.us-east-2.rds.amazonaws.com:3306/anglertr_dbempmanagement?serverTimezone=UTC&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: p!Qaz#Edc123#
+  
+    #url: jdbc:mysql://66.198.246.132:3306/anglertr_dbempmanagement?serverTimezone=UTC&useSSL=false&zeroDateTimeBehavior=convertToNull
+    #username: anglertr_dbuser
+    #password: ^u*Z@to)lm%S
+    #url: jdbc:mysql://104.198.216.47:3306/graham?serverTimezone=UTC&useSSL=false&zeroDateTimeBehavior=convertToNull   
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    #username: root
+    #password: V8b4n00n
+    type: com.zaxxer.hikari.HikariDataSource     
+    hikari:
+      idle-timeout: 10000
+      connection-timeout: 60000
+      connection-test-query: SELECT 1
+      #minimum-idle: 3
+      maximum-pool-size: 50
+      pool-name: tracker-ui-service-datasource
+      
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      #ddl-auto: validate
+      naming:
+          implicit-strategy: com.tracker.ui.hibernate.ImplicitNamingStrategyComponentPathImpl
+          physical-strategy: com.tracker.ui.hibernate.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.format_sql: true 
+      hibernate.jdbc.batch_size: 4
+      hibernate.order_inserts: true 
+      
+  mail:
+    host: smtp.coinxoom.com
+    port: 587
+    username: noreply@coinxoom.com
+    password: ENC(cORyIChPhrWfzHHABfysMwaHqv9n9mKp)
+    properties: 
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          from: noreply@coinxoom.com
+
+jasypt:
+  encryptor:
+    password: Test123!  
+    
+#security:
+ # oauth2:
+   #   client:
+     #   registration:
+       #  facebook:
+       ##   clientId: 410761562312101
+         # clientSecret: af3b1e569a37c23308940a3733c094a5
+         # scope:
+          # - email
+          # - public_profile
+schedules:
+  poolsize: 10 #Poolsize for Schedules (Email, Exchange Sync, MarketPrice etc)
+  emailNotificationService:
+    fixedDelay: 10000
+    initialDelay: 1000
+
+google:
+  credentials:
+    file: D:\anglertrack_java 4 3\tracker-ui\src\main\resources/credential.json
+    token: AIzaSyA14NLvoFC6BfvGNDUqKVbciyOE_vVs8gw
+
+storage:
+  folder:
+    path: /apps/tempFile
+    
+sms:
+  url: https://app3.simpletexting.com/v1
+  token: 7f26684f6d1607e5fae9f630761f5cbd
+
+stevesie:
+  token: test
+  url: https://stevesie.com/cloud/api/v1
+  workflowUserProfileId: 43a6e053-25b7-49e6-b857-9c29c3a48dfe
+  workflowUserPostId: e31c9f65-aa2a-4e3b-97d8-be401021df2b
+  instaSessionId: 38110522627%3AHBEyImm478R8vb%3A5
+
+tiny:
+  url: http://tinyurl.com/api-create.php?url=
+
+sendgrid:
+  apikey: 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
+
+default:
+  phone: 4045782670s
+  email: support@anglertrack.net
+  ccEmail: no-reply@anglertrack.net
+  fromEmail: no-reply@anglertrack.net
+
+

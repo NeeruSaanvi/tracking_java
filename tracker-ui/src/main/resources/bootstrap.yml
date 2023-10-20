@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: tracker-ui
+  profiles:
+    active: default
+  #Connection settings  for the cloud config-server 
+  cloud:
+    config: 
+      uri: http://localhost:10888
+      username: V8b4n00n-config-server-username 
+      password: V8b4n00n-config-server-password
+      # If turned on this option will stop the application from executing if config-server is not running
+      failFast: false
+
+##This option makes the management configuration hidden with security on this application
+management:
+  security:
+    enabled: false
+
+

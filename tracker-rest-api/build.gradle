@@ -1,0 +1,150 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.4.RELEASE'
+	}
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("io.spring.gradle:dependency-management-plugin:0.5.4.RELEASE")	
+	}
+} 
+ 
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+
+defaultTasks 'clean', 'install'
+ 
+war {
+    baseName = 'tracker-rest-api'
+    //version =  '0.1.0'
+    group = group
+    manifest {
+        attributes 'Implementation-Title': 'Tracker Rest API'
+    }
+}
+
+ 
+
+
+task runService {
+    doLast {
+    	println stopServiceTask()
+    	sleep(10 * 1000)
+    	println copyBuildTask()
+    	sleep(10 * 1000)
+        println runServiceTask() 
+    }
+}
+
+
+
+//task install(dependsOn:  [/*bootRepackage,*/ runService])
+
+group = 'com.tracker'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+
+ext {
+	springCloudVersion = 'Edgware.RELEASE'
+}
+
+def springBootVersion = "2.1.4.RELEASE"
+def springVersion = "4.3.10.RELEASE"  
+def springSocialSecurity = "1.1.4.RELEASE"
+def springSocialFacebook = "2.0.3.RELEASE"
+def tilesVersion = "3.0.7"
+def junitVersion = "4.12" 
+def apacheCommonsLang = "3.6"
+def swaggerVersion = "2.7.0"
+
+bootRun { systemProperties = System.properties }
+
+dependencies {
+
+    compile project(":tracker-services") 
+    
+    //compile("com.tracker:tracker-commons:${version}")
+	//compile("com.tracker:tracker-services:${version}")
+    
+	compile("org.springframework.boot:spring-boot-starter-batch:${springBootVersion}")
+	//compile("org.springframework.cloud:spring-cloud-starter-config:1.3.2.RELEASE") 
+	//compile("org.springframework:spring-webmvc:3.1.1.RELEASE")
+	//compile("org.springframework.cloud:spring-cloud-starter-config:1.3.2.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-data-rest:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-validation:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") 
+    compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-devtools:${springBootVersion}") 
+    
+	compile("org.hibernate.validator:hibernate-validator:6.0.1.Final")
+	compile("org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1")
+    
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}") 
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") 
+    compile("javax.validation:validation-api:2.0.1.Final")
+    
+	
+	compile("com.google.guava:guava:23.0")
+	
+	compile("org.flywaydb:flyway-core:5.2.4")
+	
+	//compile("org.jasypt:jasypt-hibernate4:1.9.2")
+	//compile("com.github.ulisesbocchio:jasypt-spring-boot-starter:1.18") 
+	compile("org.mindrot:jbcrypt:0.4")	
+	
+	compile("com.zaxxer:HikariCP:2.6.3")
+	//runtime("org.postgresql:postgresql:42.2.4")
+	runtime("mysql:mysql-connector-java:6.0.6")
+	compileOnly("org.projectlombok:lombok:1.16.8")
+	compile("com.google.code.gson:gson:2.8.1") 
+	compile("io.jsonwebtoken:jjwt:0.9.0")
+	compile("io.springfox:springfox-swagger2:2.8.0")
+	compile("io.springfox:springfox-swagger-ui:2.8.0")
+	
+	compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+	
+	testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+	testCompile("org.springframework.batch:spring-batch-test:${springBootVersion}")
+	testCompile("org.springframework.security:spring-security-test:5.1.5.RELEASE")
+}
+
+ configurations.all {
+    exclude group: "log4j", module: "log4j"
+    exclude group: "org.apache.logging.log4j", module: "log4j-slf4j-impl"
+    exclude group: "org.apache.logging.log4j", module: "log4j-api"
+    exclude group: "org.apache.logging.log4j", module: "log4j-core"
+    exclude group: "org.slf4j", module: "log4j-over-slf4j"
+    //exclude group: "ch.qos.logback", module: "logback-classic"
+    //exclude group: "ch.qos.logback", module:"logback-core"
+    //exclude group: "org.springframework.boot", module:"spring-boot-starter-logging"
+    exclude group: "org.apache.tomcat", module:"tomcat-jdbc"
+    exclude group: "javax.validation", module:"validation-api"
+}
+
+/*
+springBoot {
+    mainClass = "com.tracker.rest.springboot.Application" 
+    executable = true
+}
+
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+*/

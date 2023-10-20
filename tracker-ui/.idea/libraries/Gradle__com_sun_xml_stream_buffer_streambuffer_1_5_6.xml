@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.sun.xml.stream.buffer:streambuffer:1.5.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.stream.buffer/streambuffer/1.5.6/8288761f6f6b8cd110b32ce32e8dfd7c4b1c5f7f/streambuffer-1.5.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.stream.buffer/streambuffer/1.5.6/d918b6a90c7ac18495183fbac6a73ac533c1ca/streambuffer-1.5.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

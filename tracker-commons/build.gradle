@@ -1,0 +1,121 @@
+plugins {
+	//id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+	//id 'jar'
+}
+
+//apply plugin: 'io.spring.dependency-management'
+
+group = 'com.tracker'
+version = '0.0.1-SNAPSHOT' 
+sourceCompatibility = '1.8'
+
+defaultTasks 'clean', 'install'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	//mavenLocal()
+	mavenCentral()
+}
+
+def springBootVersion = "2.1.4.RELEASE"
+def jasyptVersion = "1.9.2"
+def jbcrypt = "0.4"
+def springVersion = "5.0.7.RELEASE"   
+def junitVersion = "4.12" 
+def apacheCommonsLang = "3.6"
+def apacheCommonsFileUpload = '1.3.3'
+def	apacheCommonsBeanUtils = '1.9.3'
+def	apacheCommonsIO = '2.5'
+def commonsCodec = "1.11"
+def commonsText = "1.2"
+def commonsRng = "1.0"
+def commonsValidator = "1.6"
+def modelMapper = "1.1.2"
+def lombok = "1.18.8"
+def gson = "2.8.1"
+def jackson = "2.9.3"
+def slf4j = "2.7"
+def validationApi = "2.0.1.Final"
+def guava = "19.0"
+
+dependencies {
+	   
+     compile("com.github.ulisesbocchio:jasypt-spring-boot-starter:1.18")
+     compile("org.jasypt:jasypt:${jasyptVersion}")
+     compile("org.jasypt:jasypt-hibernate4:${jasyptVersion}")
+     
+     annotationProcessor("org.projectlombok:lombok:${lombok}")
+     compileOnly("org.projectlombok:lombok:${lombok}")
+     //compileOnly("org.projectlombok:lombok:${lombok}")
+	 
+     compile("com.google.code.gson:gson:${gson}")
+     compile("com.fasterxml.jackson.core:jackson-databind:${jackson}")
+     compile("org.mindrot:jbcrypt:${jbcrypt}")
+     
+     compile("com.google.guava:guava:${guava}")
+      
+	 compile("org.springframework:spring-core:${springVersion}") 
+	 compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+	 compile("org.springframework.boot:spring-boot-starter-mail:${springBootVersion}")
+	 compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+	
+	// compile("javax.validation:validation-api:${validationApi}")
+	
+	 compile("commons-fileupload:commons-fileupload:${apacheCommonsFileUpload}")
+     compile("commons-beanutils:commons-beanutils:${apacheCommonsBeanUtils}")
+     compile("commons-io:commons-io:${apacheCommonsIO}") 
+     compile("commons-codec:commons-codec:${commonsCodec}")
+	 compile("commons-validator:commons-validator:${commonsValidator}")
+	 compile("org.apache.commons:commons-lang3:${apacheCommonsLang}")
+	 compile("org.apache.commons:commons-text:${commonsText}")
+	 compile("org.apache.commons:commons-rng-simple:${commonsRng}")
+	 compile("org.modelmapper:modelmapper:${modelMapper}")
+	
+	 compile("org.apache.logging.log4j:log4j-slf4j-impl:${slf4j}")
+	 compile("org.apache.logging.log4j:log4j-core:${slf4j}")
+	 
+	compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
+	 
+     
+     testCompile("junit:junit:${junitVersion}") 
+     
+	compile group: 'org.apache.poi', name: 'poi', version: '4.1.2'
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
+
+
+	compile 'com.google.cloud:google-cloud-storage:1.101.0'
+	
+	compile("com.sendgrid:sendgrid-java:4.4.1")
+	compile("com.itextpdf:itextpdf:5.5.13")
+	compile("com.itextpdf.tool:xmlworker:5.5.13")
+
+	
+	
+}
+
+configurations.all {
+    exclude group: "log4j", module: "log4j"
+    exclude group: "org.apache.logging.log4j", module: "log4j-slf4j-impl"
+    exclude group: "org.apache.logging.log4j", module: "log4j-api"
+    exclude group: "org.apache.logging.log4j", module: "log4j-core"
+    exclude group: "org.slf4j", module: "log4j-over-slf4j"
+    //exclude group: "ch.qos.logback", module: "logback-classic"
+    //exclude group: "ch.qos.logback", module:"logback-core"
+    //exclude group: "org.springframework.boot", module:"spring-boot-starter-logging"
+    exclude group: "org.apache.tomcat", module:"tomcat-jdbc"
+    //exclude group: "javax.validation", module:"validation-api" 
+}
+
+ 
+
+ 

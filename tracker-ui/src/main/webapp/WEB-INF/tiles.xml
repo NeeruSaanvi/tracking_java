@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+ 
+<tiles-definitions>  
+  
+   <!-- Default Layout Definition -->
+   <definition name="default-layout" template="/WEB-INF/views/layouts/defaultLayout.jsp">  
+       <put-attribute name="header" value="/WEB-INF/views/layouts/header.jsp" />  
+       <put-attribute name="leftbar" value="/WEB-INF/views/layouts/leftbar.jsp" />  
+       <put-attribute name="footer" value="/WEB-INF/views/layouts/footer.jsp" />  
+   </definition>
+   
+    <!-- External Layout Definition -->
+   <definition name="external-layout" template="/WEB-INF/views/externals/external_layouts/externalLayout.jsp"> 
+   </definition>   
+    
+   <definition name="dashboard" extends="default-layout">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/views/dashboard.jsp" />  
+   </definition> 
+   
+   
+    <definition name="link" extends="default-layout">  
+       <put-attribute name="title" value="link" />  
+       <put-attribute name="body" value="/WEB-INF/views/link_account.jsp" />  
+   </definition> 
+   <definition name="socialImages" extends="default-layout">  
+       <put-attribute name="title" value="socialImages" />  
+       <put-attribute name="body" value="/WEB-INF/views/gallery/socialImages.jsp" />  
+   </definition>
+   <definition name="fblogin" extends="default-layout">  
+       <put-attribute name="title" value="facebook" />  
+       <put-attribute name="body" value="/WEB-INF/views/linkmember.jsp" />  
+   </definition>
+   <definition name="highResImage" extends="default-layout">  
+       <put-attribute name="title" value="highResImage" />  
+       <put-attribute name="body" value="/WEB-INF/views/gallery/highResImage.jsp" />  
+   </definition>
+   
+   <definition name="video" extends="default-layout">  
+       <put-attribute name="title" value="video" />  
+       <put-attribute name="body" value="/WEB-INF/views/gallery/video.jsp" />  
+   </definition>
+   
+   <definition name="reports" extends="default-layout">  
+       <put-attribute name="title" value="Reports" />  
+       <put-attribute name="body" value="/WEB-INF/views/reports/reports.jsp" />  
+   </definition>
+   
+   <definition name="scheduleReports" extends="default-layout">  
+       <put-attribute name="title" value="Schedule Reports" />  
+       <put-attribute name="body" value="/WEB-INF/views/reports/scheduleReports.jsp" />  
+   </definition>
+   
+    <definition name="afterlogin" extends="default-layout">  
+       <put-attribute name="title" value="afterlogin" />  
+       <put-attribute name="body" value="/WEB-INF/views/link_account.jsp" />  
+   </definition>
+   <definition name="footer" extends="default-layout">  
+       <put-attribute name="title" value="footer" />  
+       <put-attribute name="body" value="/WEB-INF/views/layouts/footer.jsp" />  
+   </definition>
+   
+   <definition name="notifications" extends="default-layout">  
+       <put-attribute name="title" value="notifications" />  
+       <put-attribute name="body" value="/WEB-INF/views/notifications.jsp" />  
+   </definition>
+   
+   <definition name="updateTemplates" extends="default-layout">  
+       <put-attribute name="title" value="notifications" />  
+       <put-attribute name="body" value="/WEB-INF/views/updateTemplates.jsp" />  
+   </definition>
+   
+   <definition name="team" extends="default-layout">  
+       <put-attribute name="title" value="Team" />  
+       <put-attribute name="body" value="/WEB-INF/views/team.jsp" />  
+   </definition>
+   
+   <definition name="users" extends="default-layout">  
+       <put-attribute name="title" value="User" />  
+       <put-attribute name="body" value="/WEB-INF/views/users.jsp" />  
+   </definition>
+   
+   <definition name="applications" extends="default-layout">  
+       <put-attribute name="title" value="Applications" />  
+       <put-attribute name="body" value="/WEB-INF/views/applications.jsp" />  
+   </definition>
+   
+   <definition name="embedcode" extends="default-layout">  
+       <put-attribute name="title" value="embedcode" />  
+       <put-attribute name="body" value="/WEB-INF/views/embedcode.jsp" />  
+   </definition>
+   
+   <definition name="scoreSettings" extends="default-layout">  
+       <put-attribute name="title" value="scoreSettings" />  
+       <put-attribute name="body" value="/WEB-INF/views/scoreSettings.jsp" />  
+   </definition>
+   
+   <definition name="annualrankings" extends="default-layout">  
+       <put-attribute name="title" value="annualrankings" />  
+       <put-attribute name="body" value="/WEB-INF/views/annualrankings.jsp" />  
+   </definition>
+   
+   <definition name="viewApplication" extends="default-layout">  
+       <put-attribute name="title" value="viewApplication" />  
+       <put-attribute name="body" value="/WEB-INF/views/viewApplication.jsp" />  
+   </definition>
+   
+   <definition name="viewApplicationSports" extends="default-layout">  
+       <put-attribute name="title" value="viewApplication" />  
+       <put-attribute name="body" value="/WEB-INF/views/viewApplicationSports.jsp" />  
+   </definition>
+   
+   <definition name="keywords" extends="default-layout">  
+       <put-attribute name="title" value="Web Post" />  
+       <put-attribute name="body" value="/WEB-INF/views/account/keywords.jsp" />  
+   </definition>
+   
+    <definition name="promoCode" extends="default-layout">  
+       <put-attribute name="title" value="Promo Code" />  
+       <put-attribute name="body" value="/WEB-INF/views/account/promoCode.jsp" />  
+   </definition>
+   
+   <definition name="webPost" extends="default-layout">  
+       <put-attribute name="title" value="Web Post" />  
+       <put-attribute name="body" value="/WEB-INF/views/nonsocial/webPost.jsp" />  
+   </definition>
+   
+   <definition name="userStore" extends="default-layout">  
+       <put-attribute name="title" value="User Store" />  
+       <put-attribute name="body" value="/WEB-INF/views/nonsocial/userStore.jsp" />  
+   </definition>
+   
+   <definition name="viewUserStore" extends="default-layout">  
+       <put-attribute name="title" value="User Store" />  
+       <put-attribute name="body" value="/WEB-INF/views/nonsocial/viewUserStore.jsp" />  
+   </definition>
+   
+   <definition name="prints" extends="default-layout">  
+       <put-attribute name="title" value="Prints" />  
+       <put-attribute name="body" value="/WEB-INF/views/nonsocial/prints.jsp" />  
+   </definition> 
+   
+   <definition name="events" extends="default-layout">  
+       <put-attribute name="title" value="events" />  
+       <put-attribute name="body" value="/WEB-INF/views/nonsocial/events.jsp" />  
+   </definition>  
+   
+   <definition name="lead" extends="default-layout">  
+       <put-attribute name="title" value="Lead" />  
+       <put-attribute name="body" value="/WEB-INF/views/nonsocial/lead.jsp" />  
+   </definition>  
+   
+   <definition name="tournaments" extends="default-layout">  
+       <put-attribute name="title" value="Tournaments" />  
+       <put-attribute name="body" value="/WEB-INF/views/nonsocial/tournaments.jsp" />  
+   </definition> 
+   
+   <definition name="userProfile" extends="default-layout">  
+       <put-attribute name="title" value="User Profile" />  
+       <put-attribute name="body" value="/WEB-INF/views/userProfile.jsp" />  
+   </definition> 
+   
+   <definition name="trends" extends="default-layout">  
+       <put-attribute name="title" value="Trends" />  
+       <put-attribute name="body" value="/WEB-INF/views/trends.jsp" />  
+   </definition>
+   
+   <definition name="userTransaction" extends="default-layout">  
+       <put-attribute name="title" value="User Transaction" />  
+       <put-attribute name="body" value="/WEB-INF/views/userTransaction.jsp" />  
+   </definition> 
+   
+   <definition name="exchangeImports" extends="default-layout">  
+       <put-attribute name="title" value="Exchange Imports" />  
+       <put-attribute name="body" value="/WEB-INF/views/ExchangeImports.jsp" />  
+   </definition>
+   
+   
+   <!-- ############################################################################### --> 
+   <!-- ############################################################################### --> 
+   <!-- ############################      EXTERNAL PAGES   ############################ --> 
+   <!-- ############################################################################### --> 
+   <!-- ############################################################################### --> 
+   
+   <definition name="login" extends="external-layout">  
+       <put-attribute name="title" value="Login" /> 
+       <put-attribute name="body" value="/WEB-INF/views/externals/login.jsp" /> 
+   </definition> 
+   
+   <definition name="register" extends="external-layout">  
+       <put-attribute name="title" value="Register New User" /> 
+       <put-attribute name="body" value="/WEB-INF/views/externals/register.jsp" /> 
+   </definition>
+   
+   <definition name="forgotPassword" extends="external-layout">  
+       <put-attribute name="title" value="Forgot Password Page" /> 
+       <put-attribute name="body" value="/WEB-INF/views/externals/login.jsp" /> 
+   </definition> 
+   
+   <definition name="resetForgottenPassword" extends="external-layout">  
+       <put-attribute name="title" value="Rest Password Page" /> 
+       <put-attribute name="body" value="/WEB-INF/views/externals/resetForgottenPassword.jsp" /> 
+   </definition>  
+   
+   <!-- ############################################################################### --> 
+   <!-- ############################################################################### --> 
+   <!-- ############################   EXTERNAL PAGES ENDS  ########################### --> 
+   <!-- ############################################################################### --> 
+   <!-- ############################################################################### --> 
+  
+</tiles-definitions>
